@@ -8,7 +8,7 @@ on:
   push:
     branches: [ master ]
   pull_request:
-    branches: [ master ]
+    branches:   master ] 
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -36,13 +36,22 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project
           
-  hello-world-windows:        
+  hello-world-windows :        
     name: hello world windows
     runs-on: windows-latest
     
     steps:
-    - name: Print ello World Windows
-      run: echo 'Hello world Rodando
+    - name: Print Hello World Windows
+      run: echo 'Hello world Rodando'
+ 
+  hello-world-macos:        
+      name: hello world macos
+      needs: [hello-world-ubuntu,hello-world-windows ] 
+      runs-on: windows-latest
+    
+      steps:
+      - name: Print Hello World MacOS
+        run: echo 'Hello world Rodando' 
       
         
         
